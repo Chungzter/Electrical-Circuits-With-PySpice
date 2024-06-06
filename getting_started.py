@@ -30,7 +30,7 @@ sim      = cir.simulator(temperature=25,nominal_temperature=25)
 analysis = sim.operating_point()
 
 for node in analysis.nodes.values(): 
-    print('Node {}: {:4.1f} V'.format(str(node), float(node)))
+    print('Node {}: {:4.1f} V'.format(str(node), float(node[0])))
 
 for node in analysis.branches.values(): 
-    print('Node {}: {:5.2f} A'.format(str(node), float(node)))
+    print('Node {}: {:5.2f} A'.format(str(node), float(node[0])))
