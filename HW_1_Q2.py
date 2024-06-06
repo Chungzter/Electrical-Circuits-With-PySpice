@@ -24,3 +24,14 @@ cir.V   (1, 2, 3     , 10@u_V)
 cir.CCVS(1, cir.gnd, 2, 3, 1,       2)
 cir.VCCS(1, cir.gnd, 1, 3, cir.gnd, 2)
 # End Netlist
+
+sim      = cir.simulator(temperature=25,nominal_temperature=25)
+analysis = sim.operating_point()
+
+print("\nNode Voltages   : ")
+for node in analysis.nodes.values(): 
+    print('Node {}: {:5.2f} V'.format(str(node), float(node[0])))
+
+print("\nBranch Currents : ")
+for node in analysis.branches.values(): 
+    print('Node {}: {:5.2f} A'.format(str(node), float(node[0])))
