@@ -24,7 +24,7 @@ cir.I   (1,cir.gnd,2 , 75@u_A)
 cir.I   (2,d, cir.gnd,  6@u_A)
 cir.I   (3,cir.gnd,c , 10@u_A)
 
-cir.CCVS(1, 2, 6, 'Vtest'     , r)
+cir.CCVS(1, 2, 6,       'Vtest', r)
 cir.CCVS(2, 2, cir.gnd, 'Vtest', 6)
 cir.VCCS(1, 1, cir.gnd, c, d, 9)
 # End Netlist
