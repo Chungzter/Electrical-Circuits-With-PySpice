@@ -28,7 +28,3 @@ cir.VCCS(1,cir.gnd,3,2,cir.gnd,3)
 
 sim      = cir.simulator(temperature=25,nominal_temperature=25)
 analysis = sim.operating_point()
-
-current=np.array(analysis.branches.values())
-
-volt=np.array(analysis.nodes.values())
