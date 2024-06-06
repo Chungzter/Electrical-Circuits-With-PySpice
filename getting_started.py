@@ -15,17 +15,20 @@ logger=Logging.setup_logging()
 
 #init circuit
 cir=Circuit("test")
+
 #creating the cir
-cir.V(1,1,cir.gnd,20@u_V)
-cir.R(1,1,2,1@u_Ohm)
-cir.R(2,2,cir.gnd,1@u_Ohm)
-cir.R(3,2,3,1@u_Ohm)
-cir.I(1,2,3,2@u_A)
-cir.R(4,3,cir.gnd,1@u_Ohm)
+cir.V   (1,1,cir.gnd, 20@u_V)
+cir.R   (1,1,2      , 1@u_Ohm)
+cir.R   (2,2,cir.gnd, 1@u_Ohm)
+cir.R   (3,2,3      , 1@u_Ohm)
+cir.I   (1,2,3      , 2@u_A)
+cir.R   (4,3,cir.gnd, 1@u_Ohm)
+
 cir.VCCS(1,cir.gnd,3,2,cir.gnd,3)
 
-sim=cir.simulator(temperature=25,nominal_temperature=25)
-analysis=sim.operating_point()
+sim      = cir.simulator(temperature=25,nominal_temperature=25)
+analysis = sim.operating_point()
 
 current=np.array(analysis.branches.values())
+
 volt=np.array(analysis.nodes.values())
