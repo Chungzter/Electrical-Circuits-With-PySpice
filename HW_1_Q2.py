@@ -33,6 +33,9 @@ cir.VCCS(1, cir.gnd, 1, 3, cir.gnd, 2)
 sim      = cir.simulator(temperature=25,nominal_temperature=25)
 analysis = sim.operating_point()
 
+current = np.array(analysis.branches.values())
+volt    = np.array(analysis.nodes.values())
+
 print("\nNode Voltages   : ")
 for node in analysis.nodes.values(): 
     print('Node {}: {:5.2f} V'.format(str(node), float(node[0])))
